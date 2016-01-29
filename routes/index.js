@@ -6,20 +6,23 @@ var router = express.Router();
 router.get('/', function (req, res, next) {
     res.render('home', {title: 'homepage'});
 });
-//nicat login
-router.get('/login', function (req, res, next) {
-    res.render('login', {title: 'login'});
+//nicat
+router.get('/signin', function (req, res, next) {
+    res.render('signin', {title: 'signin'});
+});
+router.get('/signup', function (req, res, next) {
+    res.render('signup', {title: 'signup'});
 });
 var user = {
     username: 'nicat',
     password: 'nicat'
 };
-router.post('/login', function (req, res, next) {
+router.post('/signin', function (req, res, next) {
     if (req.body.username === user.username && req.body.password === user.password) {
         req.session.user = user;
         res.render('home', {title: 'welcome to homepage'});
     } else {
-        res.render('login', {title: 'failed to login.try again'});
+        res.render('signin', {title: 'failed to login.try again'});
     }
 });
 
