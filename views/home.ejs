@@ -1,5 +1,11 @@
 <% include header.ejs %>
-<a href="/login">login</a>
-<h1><%= title %></h1>
-<p>Welcome to <%= title %></p>
+<div>
+    <div style="margin-top:10px;">
+        <a href="/signout" style="color:#fff; text-decoration:none;border:1px solid #fff; padding:5px;">sign out</a>
+    </div>
+
+    <h1 style="color:#fff;"><%= title %></h1>
+
+    <h1 style="color:#fff;"><%= content %></h1>
+</div>
 <% include footer.ejs %>

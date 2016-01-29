@@ -1,18 +1,19 @@
 <% include header.ejs %>
 <div>
-    <form method="post">
-        <%= title %>
+    <form method="post" action="/signin">
+        <h1 style="color:#fff;"><%= title %></h1>
         <div>
-
             <input type="text" id="username" name="username" value="nicat">
         </div>
         <div>
             <input type="password" id="password" name="password" value="nicat">
         </div>
         <div>
-            <button type="submit">登陆</button>
+            <button type="submit">sign in</button>
         </div>
-        </fieldset>
     </form>
+    <div style="margin-top:10px;">
+        <a href="/signup" style="color:#fff; text-decoration:none;border:1px solid #fff; padding:5px;">signup</a>
+    </div>
 </div>
 <% include footer.ejs %>
