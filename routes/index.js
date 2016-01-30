@@ -23,7 +23,8 @@ var user = {
 router.post('/signin', function (req, res, next) {
     if (req.body.username === user.username && req.body.password === user.password) {
         req.session.user = user;
-        res.render('home', {title: 'success!welcome :' + req.body.username, content: 'u can check the session'});
+        res.redirect("home");
+        //res.render('home',);
     } else {
         res.render('signin', {title: 'failed to login.try again'});
     }
@@ -37,5 +38,7 @@ router.post('/signup', function (req, res, next) {
 router.get('/index', function (req, res, next) {
     res.render('index', {title: 'index'});
 });
-
+router.get('/home', function (req, res, next) {
+    res.render('home',  {userName: req.body.username, content: 'u can check the session'});
+});
 module.exports = router;
