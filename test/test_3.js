@@ -36,7 +36,7 @@ setTimeout(function () {
     child.emit('activity', 'cry');
 }, 3000);
 //
->nodev6 test5.js
+>nodev6 test3.js
 //
  black cat sleepy
  black mouse move
