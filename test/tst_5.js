@@ -9,6 +9,11 @@ const child_process = require("child_process");
 const serverport = x;
 const server = require('http').createServer();
 const io = require('socket.io')(server);
+//
+io.on('connection', (socket)=>{
+    console.log("ini:"+socket.id)
+});
+//
 if (!sticky.listen(server, serverport)) {
     server.once('listening', function () {
         console.log('server started on ' + serverport + ' port');
